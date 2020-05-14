@@ -5,7 +5,6 @@ import java.net.MalformedURLException;
 import java.util.logging.Level;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.HtmlButtonInput;
@@ -32,7 +31,7 @@ public class HTML extends Resource{
 	public String toString() {
 		return response.getContentAsString();
 	}
-	public void getPage(String url) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
+	public void getPage(String url) throws MalformedURLException, IOException {
 		currentPage = client.getPage(url);
 	}
 	

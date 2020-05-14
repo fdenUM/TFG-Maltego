@@ -1,9 +1,6 @@
 package aplicacion;
 
 import java.util.Collection;
-
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
 import client.HTTPClient;
 import maltego.MaltegoEntity;
 import resources.Resource;
@@ -23,12 +20,8 @@ public abstract class WebService extends OpenSource{
 	public Collection<MaltegoEntity> getOutputEntities(MaltegoEntity inputEntity) {
 		
 		this.inputEntity = inputEntity;		
-		try {
-			recurso = askForResource();
-		} catch (FailingHttpStatusCodeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		recurso = askForResource();
+
 		getValues(recurso.toString());
 		return generateOutputEntities();
 	}

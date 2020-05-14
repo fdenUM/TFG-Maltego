@@ -6,9 +6,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
-
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
 import client.HTTPClient;
 import client.WebServiceClient;
 import maltego.MaltegoEntity;
@@ -36,7 +33,7 @@ public abstract class OpenSource {
 	
 	public abstract  Collection<MaltegoEntity> getOutputEntities(MaltegoEntity inputEntity);
 	
-	protected abstract Resource askForResource() throws FailingHttpStatusCodeException, MalformedURLException, IOException;
+	protected abstract Resource askForResource() throws MalformedURLException, IOException;
 	
 	public void run(String[] args, InputParser input, ResourceType tipoRecurso) {
 		outputEntities = new ArrayList<MaltegoEntity>();

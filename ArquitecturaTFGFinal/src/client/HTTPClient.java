@@ -2,8 +2,6 @@ package client;
 
 
 import java.io.IOException;
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
 import resources.Binary;
 import resources.HTML;
 import resources.JSON;
@@ -50,7 +48,7 @@ public class HTTPClient extends WebServiceClient{
 			HTML resourceHTML = (HTML) resource;
 			try {
 				resourceHTML.getPage(url);
-			} catch (FailingHttpStatusCodeException | IOException e) {
+			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
