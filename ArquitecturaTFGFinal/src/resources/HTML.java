@@ -7,7 +7,10 @@ import java.util.logging.Level;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
+import com.gargoylesoftware.htmlunit.html.HtmlButton;
 import com.gargoylesoftware.htmlunit.html.HtmlButtonInput;
+import com.gargoylesoftware.htmlunit.html.HtmlElement;
+import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 
@@ -42,7 +45,7 @@ public class HTML extends Resource{
 	
 
 	public void searchAndClickButton(String xPath) {
-		HtmlButtonInput button = currentPage.getElementByName(xPath);
+		HtmlElement button = (HtmlElement) currentPage.getByXPath(xPath).get(0);
 		try {
 			currentPage = button.click();
 		} catch (IOException e) {
