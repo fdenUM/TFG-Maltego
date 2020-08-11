@@ -7,10 +7,7 @@ import java.util.logging.Level;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
-import com.gargoylesoftware.htmlunit.html.HtmlButton;
-import com.gargoylesoftware.htmlunit.html.HtmlButtonInput;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
-import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 
@@ -24,7 +21,6 @@ public class HTML extends Resource{
 	public HTML() {
 		super();
 		java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(Level.OFF);
-		client = new WebClient(BrowserVersion.CHROME);
 		client = new WebClient(BrowserVersion.CHROME);
 		client.addRequestHeader("Content-Type","text/html; charset=utf-8");
 		client.addRequestHeader("Accept-Language" , "es");
