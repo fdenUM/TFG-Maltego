@@ -21,7 +21,7 @@ public class UMDirectory extends Directory{
     public UMDirectory() {
 		super("https://www.um.es/atica/directorio/");
 		cuadroDialogo = "texto";
-		botonBusqueda = "buscar";
+		botonBusqueda = "//input[@name='buscar']";
 	}
     
 	
